@@ -1,20 +1,46 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# Churn Radar — Customer Churn Analytics
 
-# Run and deploy your AI Studio app
+Lightweight React + Vite app for visualizing customer churn, analytics, and predictions.
 
-This contains everything you need to run your app locally.
+Repository: https://github.com/Akshith1704/A1-Churn-Radar-SaaS-Customer-Churn-Analytics
 
-View your app in AI Studio: https://ai.studio/apps/7ee5cd98-5113-4b08-bde2-6d93cb7e8bcd
+## Quick Start
 
-## Run Locally
+Prerequisites: Node.js (LTS) and npm
 
-**Prerequisites:**  Node.js
+1. Install dependencies
 
+```bash
+npm install
+```
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+2. Run the development server (opens at http://localhost:3000)
+
+```bash
+npm run dev
+```
+
+3. Build for production
+
+```bash
+npm run build
+```
+
+4. Preview the production build
+
+```bash
+npm run preview
+```
+
+## Environment
+
+- If you need to provide API keys or secrets, create a local `.env` file from `.env.example` and set values there. Do NOT commit secrets to the repository.
+
+## Notes
+
+- This project uses Vite, React, Tailwind and Recharts. See `package.json` for full dependency list.
+- While developing you may see a PostCSS `@import` order warning — move `@import` statements to the top of `src/index.css` if needed.
+
+## License
+
+MIT (add or change as appropriate)
