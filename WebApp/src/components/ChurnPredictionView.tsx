@@ -44,13 +44,13 @@ export default function ChurnPredictionView() {
     e.preventDefault();
     setIsLoading(true);
     
-    // Simulate ML model calculation steps for realism
+    // Simulate risk scoring steps for realism
     const steps = [
-      'Extracting feature vector tensors...',
+      'Extracting customer profile features...',
       'Normalizing monthly charges & tenure scaling...',
-      'Evaluating Random Forest trees (n_estimators=100)...',
-      'Running XGBoost gradient booster classifier...',
-      'Assembling final probability matrix...'
+      'Evaluating churn risk signals...',
+      'Assembling final risk score...',
+      'Preparing recommendation summary...'
     ];
 
     let stepIndex = 0;
@@ -171,16 +171,16 @@ export default function ChurnPredictionView() {
           Predictive Churn Engine
         </h2>
         <p className="text-slate-400 text-sm mt-0.5">
-          Execute real-time customer churn simulations using our pre-trained machine learning heuristics.
+          Execute real-time customer churn simulations using advanced risk scoring heuristics.
         </p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        {/* ML Form Panel (2 columns) */}
-        <form onSubmit={handlePredict} className="lg:col-span-2 glass p-6 space-y-6">
+{/* Risk Scoring Form Panel (2 columns) */}
+      <form onSubmit={handlePredict} className="lg:col-span-2 glass p-6 space-y-6">
           <div className="flex items-center gap-2 border-b border-white/5 pb-3">
             <BrainCircuit className="w-5 h-5 text-[#00C8FF]" />
-            <h3 className="text-sm font-semibold text-white">Interactive Model Feature Vector Inputs</h3>
+            <h3 className="text-sm font-semibold text-white">Interactive Customer Profile Inputs</h3>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-xs text-slate-300">
@@ -537,51 +537,6 @@ export default function ChurnPredictionView() {
         </div>
       </div>
 
-      {/* Future Machine Learning Python Integration Block */}
-      <div className="glass p-6 relative overflow-hidden group">
-        <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/5 rounded-full blur-3xl" />
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-          <div className="flex items-start gap-4">
-            <div className="p-3 bg-cyan-500/10 border border-cyan-500/20 rounded-xl text-[#00C8FF]">
-              <Server className="w-6 h-6" />
-            </div>
-            <div>
-              <h4 className="text-sm font-semibold text-white flex items-center gap-1.5">
-                Machine Learning Production Pipeline <span className="text-[9px] bg-cyan-500/10 text-[#00C8FF] border border-cyan-500/20 px-2 py-0.5 rounded-full uppercase font-mono font-bold tracking-wider">Future Integration Blueprint</span>
-              </h4>
-              <p className="text-xs text-slate-400 leading-relaxed mt-1 max-w-2xl">
-                Ready for production deployment. When your Python FastAPI or Flask microservice is ready, save your trained Scikit-Learn Random Forest or XGBoost model classifier as <code className="text-cyan-400 font-mono text-xs">churn_model.pkl</code> and connect it to this form. See integration blueprint:
-              </p>
-            </div>
-          </div>
-          <div className="flex items-center gap-1.5 text-xs text-slate-400 font-mono bg-white/5 border border-white/10 px-3 py-1.5 rounded-lg select-all">
-            <Zap className="w-3.5 h-3.5 text-[#00C8FF] animate-bounce" />
-            <span>POST /api/v1/predict_churn</span>
-          </div>
-        </div>
-
-        {/* Mock python server connection code snippet */}
-        <div className="mt-4 bg-black/40 border border-white/5 p-4 rounded-xl overflow-x-auto text-[11px] font-mono text-cyan-400 leading-relaxed">
-          <pre>{`# Python Production Microservice (FastAPI + Scikit-Learn)
-from fastapi import FastAPI
-import joblib
-import pandas as pd
-
-app = FastAPI()
-model = joblib.load("churn_model.pkl") # Loads serialized machine learning weights
-
-@app.post("/api/v1/predict_churn")
-async def predict_churn(customer: dict):
-    # Convert input payload into pandas dataframe features
-    df = pd.DataFrame([customer])
-    probabilities = model.predict_proba(df) # Predict risk matrix
-    churn_prob = float(probabilities[0][1]) * 100
-    return {
-        "churnProbability": churn_prob,
-        "riskLevel": "High" if churn_prob > 65 else "Medium" if churn_prob > 35 else "Low"
-    }`}</pre>
-        </div>
-      </div>
     </div>
   );
 }

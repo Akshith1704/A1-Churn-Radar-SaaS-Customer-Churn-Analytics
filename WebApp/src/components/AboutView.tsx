@@ -19,13 +19,13 @@ export default function AboutView() {
   const workflowSteps = [
     { step: '1', title: 'Data Cleaning & Preprocessing', desc: 'Normalized charges, handled missing records, and filtered feature tensors.' },
     { step: '2', title: 'Exploratory Data Analysis (EDA)', desc: 'Derived contract type, account health standing, and NPS satisfaction distributions.' },
-    { step: '3', title: 'Machine Learning Training', desc: 'Assembled a Random Forest & XGBoost classifier for churn probability prediction.' },
+    { step: '3', title: 'Predictive Risk Scoring', desc: 'Assembled a feature-driven churn risk estimator for customer analytics.' },
     { step: '4', title: 'SaaS Deployment Implementation', desc: 'Built this glassmorphic dashboard panel for real-time risk surveillance.' }
   ];
 
   const techStack = [
-    { category: 'Modeling Core', items: ['Python', 'Pandas', 'NumPy', 'Scikit-learn'] },
-    { category: 'BI Visualizers', items: ['Power BI', 'Streamlit', 'Vite & React 19'] },
+    { category: 'Analytics Core', items: ['React', 'TypeScript', 'Vite', 'Recharts'] },
+    { category: 'BI Visualizers', items: ['Power BI', 'Tableau', 'Vite & React 19'] },
     { category: 'Version Control', items: ['GitHub', 'Git LFS'] }
   ];
 
